@@ -29,9 +29,13 @@ Satyam Shukla
 B.Tech Computer Engineering | NMIMS Navi Mumbai  
 Data Analyst & Web Developer  
 
-Email: satyamshukla9791@gmail.com  
-GitHub: https://github.com/Satyam180903
-Linkedin: https://www.linkedin.com/in/satyamshukla18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-Portfolio: https://personal-portfolio-satyamshukla.netlify.app/  
+📧 Email: satyamshukla9791@gmail.com
+
+🔗 LinkedIn: https://www.linkedin.com/in/satyamshukla18
+
+💻 GitHub: https://github.com/Satyam180903
+
+🌐 Portfolio: https://personal-portfolio-satyamshukla.netlify.app/
+
 
 ⭐ If you like this portfolio, feel free to star the repository!
