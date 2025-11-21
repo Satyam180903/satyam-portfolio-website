@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Satyam Shukla</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        
+        /* Active nav link */
+        .nav-link.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        /* Project card hover effect */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-blue-500">SS</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-500 transition">About</a>
+                    <a href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a>
+                    <a href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a>
+                    <a href="#experience" class="nav-link hover:text-blue-500 transition">Experience</a>
+                    <a href="#testimonials" class="nav-link hover:text-blue-500 transition">Certificates</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-500 transition">About</a>
+                    <a href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a>
+                    <a href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a>
+                    <a href="#experience" class="nav-link hover:text-blue-500 transition">Experience</a>
+                    <a href="#testimonials" class="nav-link hover:text-blue-500 transition">Certificates</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fadeIn">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-500">Satyam Shukla</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600">
+                        Data Analyst & Web Developer
+                    </h2>
+                    <p class="text-lg mb-8 text-gray-600 max-w-lg">
+                        I’m a B.Tech Computer Engineering student who loves building data-driven dashboards and responsive web applications using modern tools and technologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition shadow-lg">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-fadeIn delay-200">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-100 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+                            <img src="images\My image.jpg" 
+                                 alt="Satyam Shukla" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                                    <i class="fas fa-code text-xl"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-bold"></p>
+                                    <p class="font-bold">Projects & Internships</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 animate-fadeIn">About <span class="text-blue-500">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center animate-fadeIn delay-100">
+                    <div class="w-64 h-64 md:w-72 md:h-72 bg-blue-100 rounded-lg overflow-hidden shadow-lg">
+                        <img src="images\My image.jpg" 
+                             alt="Satyam Shukla" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12 animate-fadeIn delay-200">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a B.Tech Computer Engineering student at NMIMS Navi Mumbai. I have completed a 2-month internship as a Power BI Data Analyst Intern at Celebal Technologies (Jun’25 – Aug’25), where I worked on creating interactive dashboards and reports, cleaning and integrating data from multiple sources, and using DAX to derive insights.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        My technical stack includes HTML, CSS, JavaScript, Bootstrap, PHP, Python, SQL, Power BI, and Excel. I enjoy transforming ideas into real, impactful solutions—whether it’s a responsive web application or a data-driven report that supports better decisions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Data Analysis & Reporting</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span>Team Collaboration</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                        <a href="#contact" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-2 rounded-lg transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-blue-500">Projects</span></h2>
+        <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+            A selection of live web applications and academic projects I’ve worked on, focusing on web development, data, and machine learning.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1: Food Delivery website (Lunch-Stop) -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-200">
+                <div class="h-48 overflow-hidden">
+                    <img src="images\Food website.png" 
+                         alt="Lunch-Stop Food Delivery" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Food Delivery Website – Lunch-Stop</h3>
+                    <p class="text-gray-600 mb-4">
+                        A responsive food delivery platform where users can explore the menu and place lunch orders with a clean and simple UI.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://lunch-stop.netlify.app/" target="_blank" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Satyam180903/lunch-stop-food-delivery-website" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2: Security Services website -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Security Services Website" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Security Services Website</h3>
+                    <p class="text-gray-600 mb-4">
+                        A professional website for a security services agency to showcase services, sectors served, and contact details.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://security-services-website.netlify.app/" target="_blank" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Satyam180903/security-services-website" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3: Sudoku Solver Game -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                <div class="h-48 overflow-hidden">
+                    <img src="images\sudoku.png" 
+                         alt="Sudoku Solver Game" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Sudoku Solver Game</h3>
+                    <p class="text-gray-600 mb-4">
+                        A browser-based Sudoku game with solving logic, allowing users to play, validate, and auto-solve puzzles.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://sudoku-game-999.netlify.app/" target="_blank" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Satyam180903/sudoku-solver-game" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: E-Learning Website -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-200">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80" 
+                         alt="E-Learning Website" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">E-Learning Website</h3>
+                    <p class="text-gray-600 mb-4">
+                        Feb’ 23 – Apr’ 23 – A fully responsive platform offering structured online educational content, assignments, and interactive quizzes for students.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">PHP</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-file-alt"></i> Case Study
+                        </a>
+                        <a href="https://github.com/Satyam180903/e-learning-website" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Biometric Recognition with GANs & ML -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Biometric Recognition with GANs" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Enhancing Biometric Recognition using GANs & ML</h3>
+                    <p class="text-gray-600 mb-4">
+                        Feb’ 25 – Apr’ 25 – Facial recognition system leveraging GANs for image enhancement and SVM for classification, improving accuracy on low-quality images.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">GANs</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">OpenCV</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SVM</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-file-alt"></i> Research Work
+                        </a>
+                        <a href="https://github.com/Satyam180903/biometric-recognition-gans-ml" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Early Athlete Injury Prediction -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Early Athlete Injury Prediction" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Early Athlete Injury Prediction (Capstone Paper)</h3>
+                    <p class="text-gray-600 mb-4">
+                        July’ 25 – Nov’ 25 – Interpretable ML model for predicting potential athlete injuries using SHAP analysis to explain feature importance and model decisions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SHAP</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Machine Learning</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-file-alt"></i> Research Paper
+                        </a>
+                        <a href="https://github.com/Satyam180903/Early-Athlete-Injury-Prediction-Capstone-" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Big Data Analytics in Online Education -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Big Data Analytics in Education" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Big Data Analytics in Online Education</h3>
+                    <p class="text-gray-600 mb-4">
+                        July’ 25 – Nov’ 25 – Analysed student learning behaviour and built dropout prediction models using big data techniques and predictive analytics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Big Data</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Machine Learning</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-file-alt"></i> Research Work
+                        </a>
+                        <a href="https://github.com/Satyam180903/big-data-online-education-analytics" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: Employee Performance Analysis (Power BI) -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="images\Hr.png" 
+                         alt="Employee Performance Analysis Dashboard" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Employee Performance Analysis</h3>
+                    <p class="text-gray-600 mb-4">
+                        Power BI dashboard analysing employee performance metrics such as productivity, attendance, and ratings to help HR and management make data-driven decisions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Power BI</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">DAX</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Excel</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-chart-line"></i> Dashboard Preview
+                        </a>
+                        <a href="https://github.com/Satyam180903/employee-performance-analysis-powerbi" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Report Files
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: Movie Industry Insights (Power BI) -->
+            <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn delay-400">
+                <div class="h-48 overflow-hidden">
+                    <img src="images\Image 1.png" 
+                         alt="Movie Industry Insights Dashboard" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Movie Industry Insights</h3>
+                    <p class="text-gray-600 mb-4">
+                        Power BI dashboard exploring movie data such as ratings, revenue, genres, and trends to generate insights into industry performance and audience preferences.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Power BI</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">DAX</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Data Visualization</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Excel / CSV</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <i class="fas fa-chart-pie"></i> Dashboard Preview
+                        </a>
+                        <a href="https://github.com/Satyam180903/movie-industry-insights-powerbi" class="text-gray-500 hover:text-gray-700">
+                            <i class="fab fa-github"></i> Report Files
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12 animate-fadeIn delay-500">
+            <a href="https://github.com/Satyam180903?tab=repositories" class="inline-block border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg transition">
+                View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-blue-500">Skills</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                Technologies and tools I use for building web applications, dashboards, and data-driven solutions.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Frontend Skills -->
+                <div class="animate-fadeIn delay-200">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-laptop-code text-blue-500 mr-3"></i> Frontend
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Bootstrap</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Angular (Basics)</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend / Core Skills -->
+                <div class="animate-fadeIn delay-300">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-server text-blue-500 mr-3"></i> Backend
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PHP</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Data Analysis</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>APIs & Integration</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database & Data -->
+                <div class="animate-fadeIn delay-400">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-database text-blue-500 mr-3"></i> Database & Data
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MySQL / phpMyAdmin</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>SQL Querying</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Power BI</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Excel</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="animate-fadeIn delay-500">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-tools text-blue-500 mr-3"></i> Tools
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>VS Code</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Git & GitHub</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>XAMPP</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Figma</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">My <span class="text-blue-500">Journey</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                My professional path and educational background that shaped my technical and analytical skills.
+            </p>
+            
+            <div class="flex flex-col md:flex-row">
+                <!-- Experience -->
+                <div class="md:w-1/2 md:pr-8 mb-12 md:mb-0 animate-fadeIn delay-200">
+                    <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-blue-500 mr-4 text-3xl"></i> Experience
+                    </h3>
+                    
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="border-l-2 border-blue-500 absolute h-full top-0 left-6"></div>
+                        
+                        <!-- Experience 1 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Power BI Data Analyst Intern</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Jun’25 – Aug’25</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">Celebal Technologies Pvt Ltd</p>
+                                <p class="text-gray-600">
+                                    Developed interactive dashboards and reports in Power BI, performing data collection, cleaning, integration, and data modeling using advanced DAX functions to derive actionable business insights.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Artificial Intelligence Intern</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Jul’24 – Sep’24</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">Internship Studio</p>
+                                <p class="text-gray-600">
+                                    Built and trained machine learning models, performed data preprocessing and algorithm optimization, and contributed to AI projects with real-world applications.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 3 -->
+                        <div class="pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Volunteer</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">May’22 – Jun’22</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">Kasturi Foundation</p>
+                                <p class="text-gray-600">
+                                    Contributed to child development initiatives by organizing educational activities and awareness programs, making a positive impact through community outreach.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="md:w-1/2 md:pl-8 animate-fadeIn delay-300">
+                    <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-blue-500 mr-4 text-3xl"></i> Education
+                    </h3>
+                    
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="border-l-2 border-blue-500 absolute h-full top-0 left-6"></div>
+                        
+                        <!-- Education 1 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">B.Tech in Computer Engineering</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">2022 – 2026</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">NMIMS, Navi Mumbai</p>
+                                <p class="text-gray-600">
+                                    Coursework includes Data Structures, Algorithms, Databases, Web Technologies, Artificial Intelligence, and Data Analytics, with hands-on projects and research work.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 2 -->
+                        <div class="mb-8 pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Higher Secondary Education (12th)</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">2019 – 2021</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">Thakur College of Science & Commerce</p>
+                                <p class="text-gray-600">
+                                    Science stream with focus on Physics, Chemistry, and Mathematics, building a strong foundation for engineering and technical studies.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Education 3 -->
+                        <div class="pl-10 relative">
+                            <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-6 -mt-1"></div>
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-start">
+                                    <h4 class="font-bold text-lg">Secondary Education (10th)</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">2018 – 2019</span>
+                                </div>
+                                <p class="text-blue-500 mb-2">Yashodham High School & Junior College</p>
+                                <p class="text-gray-600">
+                                    Completed schooling with strong interest in computers, problem solving, and logical reasoning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates / Achievements Section -->
+<section id="testimonials" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">Certificates & <span class="text-blue-500">Achievements</span></h2>
+        <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+            A few certifications and programs that highlight my learning and upskilling journey.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Certificate 1 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-200">
+                <h4 class="font-bold text-lg mb-1">Hands-on AI for Real-World Applications</h4>
+                <p class="text-blue-500 text-sm mb-4">IIT Kharagpur AI4ICPS &middot; Jul’24 – Oct’24</p>
+                <p class="text-gray-600">
+                    Completed a hands-on program focusing on applying AI techniques to real-world problems, covering ML workflows, model evaluation, and deployment concepts.
+                </p>
+            </div>
+            
+            <!-- Certificate 2 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-300">
+                <h4 class="font-bold text-lg mb-1">AWS Academy Cloud Architecting</h4>
+                <p class="text-blue-500 text-sm mb-4">AWS Academy &middot; Oct’25</p>
+                <p class="text-gray-600">
+                    Gained foundational knowledge of AWS cloud services, architecture best practices, and deployment patterns to design scalable and reliable cloud solutions.
+                </p>
+            </div>
+            
+            <!-- Certificate 3 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-400">
+                <h4 class="font-bold text-lg mb-1">Cybersecurity Analyst Job Simulation</h4>
+                <p class="text-blue-500 text-sm mb-4">Virtual Experience &middot; Mar’25</p>
+                <p class="text-gray-600">
+                    Completed a cybersecurity analyst simulation, working through tasks like threat analysis, incident response, and security reporting in a virtual environment.
+                </p>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-400">
+                <h4 class="font-bold text-lg mb-1">Web Development with HTML/CSS</h4>
+                <p class="text-blue-500 text-sm mb-4">IIIT Allahabad &middot; Mar’22 – Jun’22</p>
+                <p class="text-gray-600">
+                    Learned the fundamentals of front-end web development, including semantic HTML, modern CSS, and building responsive layouts.
+                </p>
+            </div>
+
+             <!-- Certificate 5 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-400">
+                <h4 class="font-bold text-lg mb-1">Azure AI Fundamentals</h4>
+                <p class="text-blue-500 text-sm mb-4">Microsoft &middot; Aug’24 – Sep’24</p>
+                <p class="text-gray-600">
+                    Gained foundational knowledge of artificial intelligence concepts and Microsoft Azure AI services, including machine learning workloads, computer vision, natural language processing, and responsible AI principles. Developed understanding of how to design, deploy, and manage AI solutions using Azure cloud-based tools and services.
+                </p>
+            </div>
+
+             <!-- Certificate 6 -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-sm animate-fadeIn delay-400">
+                <h4 class="font-bold text-lg mb-1">The Complete Python Pro Bootcamp</h4>
+                <p class="text-blue-500 text-sm mb-4">Udemy &middot; May’23 – Feb’24</p>
+                <p class="text-gray-600">
+                    Completed an intensive Python programming course covering core concepts such as data structures, object-oriented programming, automation, web scraping, and API integration. Enhanced problem-solving skills through hands-on projects and real-world applications, strengthening proficiency in Python for software development and data analysis.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-fadeIn">Get In <span class="text-blue-500">Touch</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto animate-fadeIn delay-100">
+                Have a project in mind, need a dashboard, or want to collaborate? Feel free to reach out!
+            </p>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8 animate-fadeIn delay-200">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600">satyamshukla9791@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-600">+91 9594509791</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-600">Mumbai, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Satyam180903" class="bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/satyamshukla18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://instagram.com/satyams_18?igshid=ZmZhODViOGI=" class="bg-blue-500 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-8 animate-fadeIn delay-300">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Satyam Shukla</h3>
+                    <p class="max-w-xs text-gray-400">
+                        Data Analyst & Web Developer creating digital experiences and dashboards that make an impact.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Data Analysis & Reporting</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Dashboard Creation</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Consulting</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4 mb-4">
+                            <a href="https://github.com/Satyam180903" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/satyamshukla18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/satyams_18?igshid=ZmZhODViOGI=" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-400">satyamshukla9791@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Satyam Shukla. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add animation classes on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
